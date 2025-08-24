@@ -10,6 +10,8 @@ import Root from './Components/Root/Root.jsx';
 import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 import Home from './Components/Home/Home.jsx';
 import DashBorad from './Components/DashBorad/DashBorad.jsx';
+import BookDetail from './Components/BookDetail/BookDetail.jsx';
+
 
 
 const router = createBrowserRouter([
@@ -21,6 +23,11 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path:'Books/:bookId',
+        element:<BookDetail></BookDetail>,
+        loader: () => fetch('/booksData.json')
       },
       {
         path: 'dashborad',
